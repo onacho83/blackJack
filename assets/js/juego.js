@@ -37,12 +37,16 @@ const pedirCarta = ()=>{
 
 }
 
-pedirCarta();
 
-const valorCarta = (carta)=>{
-return carta;
 
+const valorCarta = (carta ='')=>{
+    const  valor = carta.substring(0, carta.length - 1 );
+    return ( isNaN(valor) ) ?
+            (valor === 'A')? 11 : 10
+            : valor;
+        
 }
 
-valorCarta('2D');
 
+const valor = valorCarta(pedirCarta());
+console.log({valor});
